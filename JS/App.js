@@ -19,7 +19,7 @@ function AddingTasks(){
     // });
     //revised method after helping:
     const currentValue = enterTask.value.trim();
-    if(currentValue){ // only add the task if the filed is not empty
+    if(currentValue){ // only add the task if the field  is not empty
         tasksAdded.push(currentValue);
         console.log("Task has been added to the array: ", currentValue);
         DisplayTaskItem();
@@ -31,7 +31,7 @@ function AddingTasks(){
 function DisplayTaskItem(){
     //show the task that has been added as an html list item:
     taskItem.innerHTML = ''; //clear existing
-    tasksAdded.map((task, index)=>{
+    tasksAdded.map((task, index)=>{ // here i'm basically creating a list item as an element so that each task added is its own list item and has a unique index
         const li = document.createElement('li'); 
         li.textContent = task;
         li.setAttribute('data-index', index);
