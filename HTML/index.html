@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A To-Do List App</title>
+    <link href="../CSS/styles.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+    <h1 class="heading">Dumzi's Daily Tasks</h1>
+    <p class="content">Welcome to my daily task planning. The following are my tasks:</p>
+    </header>
+    <br/><br/>
+    <!--Where you type the task:-->
+    <input type="text" placeholder="Enter Task" id="Enter-Task"/>
+    <!-- Btn to add the task-->
+    <button id="addTaskBtn">Add Task</button>
+    <!-- Show the task that has been added-->
+    <ul>
+        <li id="show-Task"></li>
+        <input type="checkbox" id="markComplete"/>
+    </ul>
+    <!--Delete tasks:-->
+    <button id="deleteTaskBtn">Delete Task</button>
+
+    <script src="../JS/App.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.heading {
+    color: green;
+    font-size: 25px;
+    font-weight: bold;
+}
+.content {
+    color: black;
+    font-size: 15px;
+    font-weight: lighter;
+    text-align: left;
+}
+input {
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: grey;
+    color: #FFEBD7;
+}
+::placeholder{
+    color: #FFEBD7;
+}
+
+button {
+    width: 90px;
+    height: 50px;
+    margin-right: 50px;
+    background-color: #2503FD;
+    color: ivory;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#markComplete {
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    color: limegreen;
+}
