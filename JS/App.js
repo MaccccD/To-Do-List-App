@@ -41,8 +41,8 @@ function DisplayTaskItem(){
 
 function DeleteTasks(){
    deleteTask.addEventListener('click', function(){
-    tasksAdded.splice(1, 1);//removes an element from the array.
-    taskItem.innerText = ""; // clear the task
+    tasksAdded.pop();//removes an element from the array.
+    taskItem.innerText = ""; // removes evrythinggg
     console.log("delete works!");
    })
 }
@@ -58,5 +58,4 @@ function SubmitTasks(){
     })
 } 
 SubmitTasks();
-DeleteTasks();
 DeleteTasks();
