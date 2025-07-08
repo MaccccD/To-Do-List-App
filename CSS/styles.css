@@ -33,9 +33,9 @@ button {
     border-radius: 20px;
     cursor: pointer;
 }
-#markComplete {
-    width: 30px;
-    height: 30px;
+:checked{
+    width: 25px;
+    height: 25px;
     margin-left: 30px;
     margin-bottom: 15px;
     border-radius: 5px;
