@@ -16,7 +16,7 @@ const incompleteTasks = document.getElementById("incomplete");
 //the function that will handle the tasks add
 function AddingTasks(){
     // add the task that has been typed in the input field into the array:
-    // enterTask.addEventListener('input' ,function(){
+    // enterTask.addEventListener('input',function(){
     // const currentValue = this.value; // adds this on every key stroke, which isn't ideal.
     // adding a new task into the array we've created
     // tasksAdded.push(currentValue);
@@ -26,7 +26,7 @@ function AddingTasks(){
     const currentValue = enterTask.value.trim();
     if(currentValue){ // only add the task if the field  is not empty
         tasksAdded.push({ //here i'm adding each task as an object so that it would be easier to track it completion status and to do the filtering fucntionality.
-            id: Date().now,
+            id: Date().now, // retuyrns it as an object instead of strings
             text: currentValue,
             completed: false
         });
@@ -42,7 +42,7 @@ function DisplayTaskItem(){
     taskItem.innerHTML = ''; //clear existing
     tasksAdded.forEach((task, index)=>{ // here i'm basically creating a list item as an element so that each task added is its own list item and has a unique index
         const li = document.createElement('li'); 
-        li.innerText = task; // can also use Text Conten
+        li.innerText = task; // can also use Text Content as well
         li.setAttribute('data-index', index);
 
 
@@ -50,7 +50,7 @@ function DisplayTaskItem(){
         const checkbox = document.createElement("input");
         checkbox.classList.add("markComplete");
         checkbox.type = "checkbox";
-        checkbox.style.backgroundColor = "green";
+        checkbox.style.accentColor = "green";
         checkbox.checked = task.completed;
         checkbox.addEventListener("change", ()=>{ToggleTask(index)})
        
@@ -61,7 +61,7 @@ function DisplayTaskItem(){
         if(task.completed){
             textSpan.style.textDecoration = "line-through";
         }
-
+    
         li.appendChild(textSpan);
         li.appendChild(checkbox)
         taskItem.appendChild(li);
@@ -86,22 +86,54 @@ function DeleteTasks(){
 
 
 
-
 function FilterTasks(){
     filterItems.addEventListener('change', function(){
-        tasksAdded.filter(function(task){
-         if(task=== incompleteTasks){
-           //show the items that have just been added as tasks 
-           //here i just dk how to link the added tasks into the specific groups i have created with theirn unique id.
-         }
-         else{
-            return `${"No task has been added yet!"}`;
-         }
+        const filtredValue = this.value;
+        let filtredItems = [];
+//so using a switch case statement to check or group the tasks based on the their status.
+        switch(filtredValue){
+            case "AllTasks":
+                filtredItems = tasksAdded;
+                // if(filtredItems === null){
+                //     return $`{"No tasks have been added yet, hence there is nothing filtered to show!"}`
+                // }   
+                break;
+            case "Completed":
+                filtredItems =  tasksAdded.filter(task => task.completed);
+                break;
+            case "Incomplete":
+                filtredItems = tasksAdded.filter(task= !task.completed);
+                break;
+            default:
+                filtredItems = tasksAdded;
 
-        })
-       
-      
-    })
+        }
+        DisplayFilteredItems(filtredItems);
+
+        });
+}
+
+function DisplayFilteredItems(tasks){
+    taskItem.innerHTML = "";
+    tasks.forEach(task => {
+        const li = document.createElement("li");
+        li.textContent = task;
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.style.accentColor = "green";
+        checkbox.checked = task.completed;
+        checkbox.addEventListener("change", ()=> ToggleTask(tasksAdded.indexOf(task)));
+
+        const textSpan = document.createElement("span");
+        textSpan.innerText = task.text;
+        textSpan.style.textDecoration = "line-through";
+        textSpan.style.color = "red";
+        textSpan.style.fontWeight = "bolder"
+        li.appendChild(checkbox);
+        li.appendChild(textSpan);
+        taskItem.appendChild(li);
+
+    });
 }
 
 function StorageUpdate(){
@@ -117,4 +149,4 @@ function SubmitTasks(){
 } 
 SubmitTasks();
 DeleteTasks();
-//FilterTasks();
+FilterTasks();
