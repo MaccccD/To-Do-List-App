@@ -26,7 +26,7 @@ function AddingTasks(){
     const currentValue = enterTask.value.trim();
     if(currentValue){ // only add the task if the field  is not empty
         tasksAdded.push({ //here i'm adding each task as an object so that it would be easier to track it completion status and to do the filtering fucntionality.
-            id: Date().now, // retuyrns it as an object instead of strings
+            id: 0, // returns it as an object instead of strings
             text: currentValue,
             completed: false
         });
@@ -59,7 +59,10 @@ function DisplayTaskItem(){
         const textSpan = document.createElement("span");
         textSpan.textContent = task.text;
         if(task.completed){
-            textSpan.style.textDecoration = "line-through";
+            textSpan.style.textDecoration = "wavy";
+        }
+        else if(!task.completed){
+            textSpan.style.textDecoration = "wavy";
         }
     
         li.appendChild(textSpan);
