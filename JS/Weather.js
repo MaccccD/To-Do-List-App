@@ -1,5 +1,5 @@
 //collecting refrences:
-const displayWeather = document.querySelector("div");
+const displayWeather = document.getElementById("display-Weather");
 const searchCity = document.getElementById("searchCity");
 
 
@@ -14,13 +14,14 @@ async function FetchWeatherData(){
           Wind: 5,
           Forecast: "Clear Skies"
         }];
-        const response = await fetch(weatherData);
-        if(!response.ok){
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        console.log(data);
-        DisplayWeatherData(data);
+         DisplayWeatherData(weatherData);
+        // const response = await fetch(weatherData); //comented it put bc the fetch expects a url not an array and i diecided to create my own data
+        // if(!response.ok){
+        //     throw new Error(`HTTP error! status: ${response.status}`);
+        // }
+        // const data = await response.json();
+        // console.log(data);
+       
     }
     catch(error){
         console.error("Error fetching data, pls try again!", error);
@@ -30,12 +31,21 @@ async function FetchWeatherData(){
 FetchWeatherData();
 
 //display the fetched weather data:
-function DisplayWeatherData(data){
+function DisplayWeatherData(dataInfo){
   displayWeather.innerHTML = "";
-  const spanText = document.createElement("span");
-  spanText.innerText = data;
-  displayWeather.appendChild(spanText);
-  console.log(spanText);
+  dataInfo.forEach(data => {
+  const weatherCard = document.createElement("div");
+  weatherCard.innerHTML = `<h1>Location: ${data.location}</h1>
+   <p>Temperature: ${data.temperature}</p>
+   <p>Forecast: ${data.Forecast}</p>
+   <p>Precipitation: ${data.Precipitation}%</p>
+   <p>Humidity: ${data.Humidity}%</p>
+   <p>Wind: ${data.Wind}km/h.
+  `
+  displayWeather.appendChild(weatherCard);
+  console.log(weatherCard);
+  });
+ 
 
 }
 
