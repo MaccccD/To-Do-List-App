@@ -58,21 +58,22 @@ switch(searchedItem){
    case "Location":
     filteredItems = weatherData.map(data=> data.Location);
     break;
-   case "temperature":
-    filteredItems = weatherData.map(data => data.Temperature);
+   case "Temperature":
+    filteredItems = weatherData.map(data => data.Temperature + " degrees celsious");
     break;
    case "Precipitation":
-      filteredItems = weatherData.map(data => data.Precipitation);
+      filteredItems = weatherData.map(data => data.Precipitation + "%");
       break;
    case "Humidity":
-      filteredItems = weatherData.map(data=> data.Humidity);
+      filteredItems = weatherData.map(data=> data.Humidity + "%");
       break;
    case "Wind": 
-      filteredItems = weatherData.map(data => data.Wind);
+      filteredItems = weatherData.map(data => data.Wind + "km/h");
       break;
     case "Forecast":
       filteredItems = weatherData.map(data => data.Forecast);
       break;
+    
  }
 
   DisplaySearchedItems(filteredItems);
@@ -86,6 +87,7 @@ switch(searchedItem){
 
 function DisplaySearchedItems(searchedItems){
     searchingItems.innerHTML = "";
+    displayWeather.innerText = "";
     searchedItems.forEach(itemSearched => {
     const searchedItem = document.createElement("div");
     searchedItem.textContent = itemSearched;
