@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 //collecting references from the html :
 const enterTask = document.getElementById("Enter-Task");
 const addTask = document.getElementById("addTaskBtn");
@@ -153,3 +155,48 @@ function SubmitTasks(){
 SubmitTasks();
 DeleteTasks();
 FilterTasks();
+
+
+//Just some React Practice.
+//  import { useState } from 'react';
+//  function Toggle() {
+//  const [show, setShow] = useState(true);
+//  //toggle between light and dark mode :
+//  if(show){
+//     setShow(prev => !prev); //yaaayy correct
+//  }
+//  else if(!show){
+//     setShow(prev =! prev);
+//  }
+//  return (
+//  <>
+//  <button onClick={() => {Toggle()}}>Toggle</button>
+ 
+//  {[show] ? <div>Show</div> : <div>Hide</div>} 
+//  </>
+//  );
+//  }
+
+// function Greeting() {
+//  return <Message text="Hello, World!" />;
+//  }
+
+//  function Message(props){ //correct
+//     const actualText = {props} //object destructuring.
+
+//     return <div>{actualText.props}</div> //correct or coulda been props.text
+//  }
+
+//  function FetchData(userId){
+//     useEffect(()=>{
+//         if(userId != null){ //when user id is defined ( not null or undefined)
+//          fetch(`'https://dadjoke.com'${userId}`)
+//          .then(response => response.json())
+//          .then(data => setData(data));
+//         }
+//         else if(userId === null){ //when user id  is not defined or is null
+//             return;
+//         }
+//         [userId]
+//     })
+//  }

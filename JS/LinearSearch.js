@@ -48,6 +48,9 @@ function SearchNumbers(){
         switch(searchedNumber){
             case "64":
                 searchedNumbers = numbers.map((number => number.value));
+            break;
+            case "34":
+                searchedNumbers = numbers.map((number => number.value));
         }
         ShowSearchedNumbers(searchedNumbers);
     
