@@ -42,18 +42,26 @@ ShowNumbers();
 //adding search fucntionality :
 function SearchNumbers(){
     searchedItem.addEventListener("change", function(){
-        const searchedNumber = this.value;
-        let searchedNumbers = [];
-
-        switch(searchedNumber){
-            case "64":
-                searchedNumbers = numbers.map((number => number.value));
-            break;
-            case "34":
-                searchedNumbers = numbers.map((number => number.value));
+        const searchedNumber = parseInt(this.value);
+        // let searchedNumbers = [];
+        //
+        // switch(searchedNumber){
+        //     case "64":
+        //         searchedNumbers = numbers.filter((number => number.value === searchedNumber));
+        //     break;
+        // }
+        // ShowSearchedNumbers(searchedNumbers); // this method is not working and so i made changes:
+        let foundNumber = null;
+        for (let i = 0; i < numbers.length; i++) {
+        if(numbers[i].value === searchedNumber){
+            foundNumber = numbers[i];
+            console.log(`Found  ${searchedNumber}`);
+            ShowSearchedNumbers([foundNumber]);
         }
-        ShowSearchedNumbers(searchedNumbers);
-    
+        if(!foundNumber){
+            itemSearched.innerHTML = `<h1 style = "color: red">Not Found!</h1>`;
+        }
+        }
     });
 }
 SearchNumbers();
@@ -63,7 +71,7 @@ function ShowSearchedNumbers(searchedNumbers){
  itemSearched.innerHTML = "";
   searchedNumbers.forEach(num => {
      const item = document.createElement("span");
-     item.innerText = num;
+     item.innerText = num.value;
      item.style.color = "orange";
     // item.setAttribute("data-index", index);
      itemSearched.appendChild(item);
