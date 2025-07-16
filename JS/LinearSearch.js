@@ -2,6 +2,7 @@
 const displayNumbers = document.getElementById("linear-Search");
 const searchedItem = document.getElementById("searchItem");
 const itemSearched = document.getElementById("item");
+const sortNumbers = document.getElementById("sortNumbers");
 
 //the actual array of numbers:
 const numbers = [{id: 0,
@@ -77,4 +78,23 @@ function ShowSearchedNumbers(searchedNumbers){
      itemSearched.appendChild(item);
      console.log(item);
   });
+}
+
+function SetOrder(){
+    sortNumbers.addEventListener("click", function(){
+     numbers.sort((a, b)=> a.value - b.value);
+     ShowSortedNumbers();
+    })
+}
+SetOrder();
+
+function ShowSortedNumbers(){
+    displayNumbers.innerHTML = "";
+    numbers.forEach(number => {
+    const sortedNumberText = document.createElement("div");
+    sortedNumberText.innerText = number.value;
+    sortedNumberText.style.color = "purple";
+    displayNumbers.appendChild(sortedNumberText);
+    console.log(sortedNumberText);
+    })
 }
