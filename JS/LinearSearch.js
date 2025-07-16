@@ -59,7 +59,7 @@ function SearchNumbers(){
             ShowSearchedNumbers([foundNumber]);
         }
         if(!foundNumber){
-            itemSearched.innerHTML = `<h1 style = "color: red">Not Found!</h1>`;
+            itemSearched.innerHTML = `<h1 style = "color: red"> Value not found!</h1>`;
         }
         }
     });
@@ -68,7 +68,7 @@ SearchNumbers();
 
 //displaying the numbers that were searched :
 function ShowSearchedNumbers(searchedNumbers){
- itemSearched.innerHTML = "";
+ itemSearched.innerHTML = `<h1 style = "color: green"> Value found!</h1>`;
   searchedNumbers.forEach(num => {
      const item = document.createElement("span");
      item.innerText = num.value;
