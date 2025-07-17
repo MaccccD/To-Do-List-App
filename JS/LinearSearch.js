@@ -3,6 +3,7 @@ const displayNumbers = document.getElementById("linear-Search");
 const searchedItem = document.getElementById("searchItem");
 const itemSearched = document.getElementById("item");
 const sortNumbers = document.getElementById("sortNumbers");
+const unsortNumbers = document.getElementById("unsortNumbers");
 
 //the actual array of numbers:
 const numbers = [{id: 0,
@@ -88,6 +89,13 @@ function SetOrder(){
 }
 SetOrder();
 
+function ResetOrder(){
+   unsortNumbers.addEventListener("click", function(){
+    numbers.sort((a, b) => b.value - a.value);
+    ShowSortedNumbers();
+   }) 
+}
+ResetOrder();
 function ShowSortedNumbers(){
     displayNumbers.innerHTML = "";
     numbers.forEach(number => {
