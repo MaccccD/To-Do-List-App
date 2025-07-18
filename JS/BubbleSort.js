@@ -3,7 +3,7 @@ const swapNumbers = document.getElementById("swapNumbers");
 
 
 //the array of numbers :
-const numbers = [56, 34, 78, 90, 98, 67, 88, 12, 88, 10];
+const numbers = [56, 34, 78, 90, 98, 67, 88, 12, 75, 10];
 
 
 
@@ -36,15 +36,23 @@ let index9 = 9;
 //        numbers[index1], numbers[index0];
 //        console.log("numbers have swappped");
 //   }
-  numbers[index0], numbers[index1] = numbers[index1], numbers[index0];
+//numbers[index0], numbers[index1] = numbers[index1], numbers[index0];
+//here i'm basically mapping through the numbers in the array , comparing the number of the current index with the previous one or the next one  and then swapping them together.
+  numbers.map((number => {
+    number[index0], number[index1] = number[index1], number[index0];
+    number[index1], number[index2] = number[index2], number[index1];
+    number[index2], number[index3] = number[index3], number[index2];
+  }))
   console.log("numbers have swappped");
   DisplaySwappedNumbers([numbers[index1]], numbers[index0]);
+  DisplaySwappedNumbers([numbers[index0]], numbers[index1], numbers[index2], numbers[index3]);
   })
 }
 SwapNumbers();
 
-function DisplaySwappedNumbers(swappedNumbers){
+function DisplaySwappedNumbers(){
     bubbleSort.innerHTML = "";
+    let swappedNumbers = [34, 56, 78, 90, 98, 67, 88, 12, 75, 10];
     swappedNumbers.forEach(num => {
      const boxes = document.createElement("div");
      boxes.classList.add("number-box");
