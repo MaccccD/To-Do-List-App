@@ -44,7 +44,6 @@ let index9 = 9;
     number[index2], number[index3] = number[index3], number[index2];
   }))
   console.log("numbers have swappped");
-  DisplaySwappedNumbers([numbers[index1]], numbers[index0]);
   DisplaySwappedNumbers([numbers[index0]], numbers[index1], numbers[index2], numbers[index3]);
   })
 }
