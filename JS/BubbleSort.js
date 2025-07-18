@@ -1,9 +1,10 @@
 const bubbleSort = document.getElementById("bubble-Sort");
 const swapNumbers = document.getElementById("swapNumbers");
+const feedbackTxt = document.getElementById("feedbackTxt");
 
 
 //the array of numbers :
-const numbers = [56, 34, 78, 90, 98, 67, 88, 12, 75, 10];
+const numbers = [56, 34, 78, 90, 98, 67, 88, 12, 44, 10];
 
 
 
@@ -42,16 +43,21 @@ let index9 = 9;
     number[index0], number[index1] = number[index1], number[index0];
     number[index1], number[index2] = number[index2], number[index1];
     number[index2], number[index3] = number[index3], number[index2];
+    number[index3], number[index4] = number[index4], number[index3];
+    number[index4], number[index5] = number[index5], number[index4];
+    number[index5], number[index6] = number[index6], number[index5];
+    number[index6], number[index7] = number[index7], number[index6];
   }))
   console.log("numbers have swappped");
-  DisplaySwappedNumbers([numbers[index0]], numbers[index1], numbers[index2], numbers[index3]);
+  DisplaySwappedNumbers([numbers[index0]], numbers[index1], numbers[index2], numbers[index3], numbers[index4], numbers[index5], numbers[index6], numbers[index7]);
+  feedbackTxt.innerHTML = `<h1 style = "color: green">Values Swaapped!</h1>`;
   })
 }
 SwapNumbers();
 
 function DisplaySwappedNumbers(){
     bubbleSort.innerHTML = "";
-    let swappedNumbers = [34, 56, 78, 90, 98, 67, 88, 12, 75, 10];
+    let swappedNumbers = [34, 56, 90, 78, 67, 98, 12, 88, 10, 44];
     swappedNumbers.forEach(num => {
      const boxes = document.createElement("div");
      boxes.classList.add("number-box");
