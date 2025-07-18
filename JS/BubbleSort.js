@@ -46,10 +46,10 @@ SwapNumbers();
 function DisplaySwappedNumbers(swappedNumbers){
     bubbleSort.innerHTML = "";
     swappedNumbers.forEach(num => {
-    const swappedSpan = document.createElement("span");
-    swappedSpan.innerText = num;
-    swappedSpan.style.color = "yellow";
-    bubbleSort.appendChild(swappedSpan);
-    console.log(swappedNumbers);
+     const boxes = document.createElement("div");
+     boxes.classList.add("number-box");
+     boxes.textContent = num;
+     bubbleSort.appendChild(boxes);
+     console.log(boxes);
    });
 }
