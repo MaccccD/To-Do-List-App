@@ -72,11 +72,11 @@ function SortNumbers (){
  validateSwap.addEventListener("click", function(){
    if(numbers.indexOf(32, 0) > numbers.indexOf(56, 1)){
   //  numbers[index1], numbers[index0] = numbers[index0], numbers[index1];
-   // DisplaySwappedNumbers(numbers[index1], numbers[index0]);
+   DisplaySwappedNumbers(numbers[index0], numbers[index1]);
     console.log("numbers swapped !!");
   }
   else{
-    alert("Numbers wont swap bc the first number is not greater than the second mumber!");
+    alert("Numbers won't swap bc the first number is not greater than the second number!");
     feedbackTxt.innerHTML = `<h1 style = "color: red">Numbers did not swap</h1>`;
   }
  })
