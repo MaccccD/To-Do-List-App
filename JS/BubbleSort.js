@@ -1,11 +1,21 @@
 const bubbleSort = document.getElementById("bubble-Sort");
 const swapNumbers = document.getElementById("swapNumbers");
 const feedbackTxt = document.getElementById("feedbackTxt");
+const validateSwap = document.getElementById("validateSwap");
 
 
 //the array of numbers :
 const numbers = [56, 34, 78, 90, 98, 67, 88, 12, 44, 10];
-
+let index0 = 0;
+let index1 = 1;
+let index2 = 2;
+let index3 = 3;
+let index4 = 4;
+let index5 = 5;
+let index6 = 6;
+let index7 = 7;
+let index8 = 8;
+let index9 = 9;
 
 
 //display the numbers as boxes:
@@ -22,16 +32,7 @@ function DisplayNumbers(){
 DisplayNumbers();
 
 function SwapNumbers(){
-let index0 = 0;
-let index1 = 1;
-let index2 = 2;
-let index3 = 3;
-let index4 = 4;
-let index5 = 5;
-let index6 = 6;
-let index7 = 7;
-let index8 = 8;
-let index9 = 9;
+
   swapNumbers.addEventListener("click", function(){
 //     if(numbers[index0] > numbers[index1]) {
 //        numbers[index1], numbers[index0];
@@ -57,7 +58,7 @@ SwapNumbers();
 
 function DisplaySwappedNumbers(){
     bubbleSort.innerHTML = "";
-    let swappedNumbers = [34, 56, 90, 78, 67, 98, 12, 88, 10, 44];
+    let swappedNumbers = [34, 56];
     swappedNumbers.forEach(num => {
      const boxes = document.createElement("div");
      boxes.classList.add("number-box");
@@ -66,3 +67,18 @@ function DisplaySwappedNumbers(){
      console.log(boxes);
    });
 }
+
+function SortNumbers (){
+ validateSwap.addEventListener("click", function(){
+   if(numbers.indexOf(32, 0) > numbers.indexOf(56, 1)){
+  //  numbers[index1], numbers[index0] = numbers[index0], numbers[index1];
+   // DisplaySwappedNumbers(numbers[index1], numbers[index0]);
+    console.log("numbers swapped !!");
+  }
+  else{
+    alert("Numbers wont swap bc the first number is not greater than the second mumber!");
+    feedbackTxt.innerHTML = `<h1 style = "color: red">Numbers did not swap</h1>`;
+  }
+ })
+}
+SortNumbers();
