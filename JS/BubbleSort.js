@@ -58,7 +58,7 @@ SwapNumbers();
 
 function DisplaySwappedNumbers(){
     bubbleSort.innerHTML = "";
-    let swappedNumbers = [34, 56];
+    let swappedNumbers = [34, 56, 90, 78, 67, 98, 12, 88, 10, 44];
     swappedNumbers.forEach(num => {
      const boxes = document.createElement("div");
      boxes.classList.add("number-box");
@@ -72,15 +72,18 @@ function SortNumbers (){
  validateSwap.addEventListener("click", function(){
   // if(numbers.indexOf(32, 0) > numbers.indexOf(56, 1)){ //after seeking aid: i wasn't supposed to use "indexOf" here bc it wont work for most cases
   //  bc IndexOf only tries to find the value at that index but it does not access the actual value.
-  if(numbers[1] > numbers[0]){
+  if(numbers[1] === numbers[0] || numbers[2] < numbers[1] || numbers[3] == numbers[2]){
     numbers[index1], numbers[index0] = numbers[index0], numbers[index1];
-   DisplaySwappedNumbers(numbers[index0], numbers[index1]);
-    console.log("numbers swapped !!");
+    numbers[index2], numbers[index1] = numbers[index1], numbers[index2];
+    numbers[index3], numbers[index2] = numbers[index2], numbers[index1];
+
+   DisplaySwappedNumbers(numbers[index0], numbers[index1], numbers[index2], numbers[index3]);
+    console.log("numbers have  swapped !!");
   }
   else{
     alert("Numbers won't swap bc the first number is not greater than the second number!");
     feedbackTxt.innerHTML = `<h1 style = "color: red">Values did not swap</h1>`;
   }
- })
 }
+)}
 SortNumbers();
