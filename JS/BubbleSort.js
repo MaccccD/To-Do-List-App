@@ -5,7 +5,7 @@ const validateSwap = document.getElementById("validateSwap");
 
 
 //the array of numbers :
-const numbers = [56, 34, 78, 90, 98, 67, 88, 12, 44, 10];
+const numbers = [56, 34, 78, 90, 98, 67, 88, 12, 44, 100];
 let index0 = 0;
 let index1 = 1;
 let index2 = 2;
@@ -58,7 +58,8 @@ SwapNumbers();
 
 function DisplaySwappedNumbers(){
     bubbleSort.innerHTML = "";
-    let swappedNumbers = [34, 56, 90, 78, 67, 98, 12, 88, 10, 44];
+    let swappedNumbers = [34, 56, 90, 78, 67, 98, 12, 88, 100, 44];
+    
     swappedNumbers.forEach(num => {
      const boxes = document.createElement("div");
      boxes.classList.add("number-box");
