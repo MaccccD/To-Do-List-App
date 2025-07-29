@@ -4,6 +4,7 @@ const searchedItem = document.getElementById("searchItem");
 const itemSearched = document.getElementById("item");
 const sortNumbers = document.getElementById("sortNumbers");
 const unsortNumbers = document.getElementById("unsortNumbers");
+const swapNumbers = document.getElementById("swapNumbers");
 
 //the actual array of numbers:
 const numbers = [{id: 0,
@@ -67,6 +68,17 @@ function SearchNumbers(){
     });
 }
 SearchNumbers();
+
+function SwapValues(){
+    swapNumbers.addEventListener("click", function(){
+       // [numbers[this.value[0]] , numbers[this.value[1]]] = [numbers[this.value[1]], numbers[this.value[0]]];
+      // [numbers[this.id[0]], numbers[this.id[1]]] = [numbers[this.id[0]], numbers[this.id[1]]];
+        numbers[0], numbers[1] = numbers[1], numbers[0];
+        ShowNumbers();
+        console.log("this swap is woorking , ayyy");
+    })
+}
+SwapValues();
 
 //displaying the numbers that were searched :
 function ShowSearchedNumbers(searchedNumbers){
