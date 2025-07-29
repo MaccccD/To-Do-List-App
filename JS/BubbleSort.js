@@ -2,7 +2,7 @@ const bubbleSort = document.getElementById("bubble-Sort");
 const swapNumbers = document.getElementById("swapNumbers");
 const feedbackTxt = document.getElementById("feedbackTxt");
 const validateSwap = document.getElementById("validateSwap");
-
+const sortNumbers = document.getElementById("sortNumbers");
 
 //the array of numbers :
 const numbers = [56, 34, 78, 90, 98, 67, 88, 12, 44, 100];
@@ -88,3 +88,13 @@ function SortNumbers (){
 }
 )}
 SortNumbers();
+
+
+function SetOrder(){
+  sortNumbers.addEventListener("click", function(){
+    numbers.sort((x, y)=> y - x);
+    console.log("Workinggg");
+    DisplayNumbers();
+  })
+}
+SetOrder();
