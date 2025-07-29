@@ -56,10 +56,29 @@ function ShowSwappedNumbers(){ // the fix. Just used the original values and cre
   })
 }
 
+function LinearSearch(arr, target){ // this for loop checks if the value of what is being searched for in the array (the target) in the same as the searched  value. if yes, it retuns its index
+    for(let i= 0; i< arr.length; i++){
+        if(arr[i].value === target){
+            return i;
+        }
+    }
+    return -1; // this is the actual index
+}
+
+
 //adding search fucntionality :
 function SearchNumbers(){
     searchedItem.addEventListener("change", function(){
         const searchedNumber = parseInt(this.value);
+        const foundIndex = LinearSearch(numbers, searchedNumber);
+        //fixed search algorith after googling
+        if(foundIndex !== -1){
+           ShowSearchedNumbers([foundIndex]);
+           console.log(`Found the searched number ${searchedNumber} at index ${foundIndex}`);
+        }
+        else{
+            itemSearched.innerHTML = `<h1 style = "color: red"> Value not found!</h1>`;
+        }
         // let searchedNumbers = [];
         //
         // switch(searchedNumber){
@@ -67,21 +86,23 @@ function SearchNumbers(){
         //         searchedNumbers = numbers.filter((number => number.value === searchedNumber));
         //     break;
         // }
+        //this aldo works but its more for a genral search not linear algorithm one
         // ShowSearchedNumbers(searchedNumbers); // this method is not working and so i made changes:
-        let foundNumber = null;
-        for (let i = 0; i < numbers.length; i++) {
-        if(numbers[i].value === searchedNumber){
-            foundNumber = numbers[i];
-            console.log(`Found  ${searchedNumber}`);
-            ShowSearchedNumbers([foundNumber]);
-        }
-        if(!foundNumber){
-            itemSearched.innerHTML = `<h1 style = "color: red"> Value not found!</h1>`;
-        }
-        }
+        // let foundNumber = null;
+        // for (let i = 0; i < numbers.length; i++) {
+        // if(numbers[i].value === searchedNumber){
+        //     foundNumber = numbers[i];
+        //     console.log(`Found  ${searchedNumber}`);
+        //     ShowSearchedNumbers([foundNumber]);
+        // }
+        // if(!foundNumber){
+        //     itemSearched.innerHTML = `<h1 style = "color: red"> Value not found!</h1>`;
+        // }
+        // }
     });
 }
 SearchNumbers();
+
 
 function SwapValues(){
     swapNumbers.addEventListener("click", function(){
