@@ -42,6 +42,20 @@ function ShowNumbers(){
 }
 ShowNumbers();
 
+function ShowSwappedNumbers(){ // the fix. Just used the original values and created an array that holds those values but swapped.
+  displayNumbers.innerHTML = "";
+
+  let swappedValues = [34, 64, 12, 25, 11, 22, 88, 90, 50, 76];
+
+  swappedValues.forEach(value =>{
+    const num = document.createElement("div");
+    num.innerText = value;
+    num.style.color = "purple";
+    displayNumbers.appendChild(num);
+    console.log("showing swapped values!");
+  })
+}
+
 //adding search fucntionality :
 function SearchNumbers(){
     searchedItem.addEventListener("change", function(){
@@ -71,11 +85,25 @@ SearchNumbers();
 
 function SwapValues(){
     swapNumbers.addEventListener("click", function(){
+        //all 3 methods below are what i tried:
        // [numbers[this.value[0]] , numbers[this.value[1]]] = [numbers[this.value[1]], numbers[this.value[0]]];
       // [numbers[this.id[0]], numbers[this.id[1]]] = [numbers[this.id[0]], numbers[this.id[1]]];
-        numbers[0], numbers[1] = numbers[1], numbers[0];
-        ShowNumbers();
-        console.log("this swap is woorking , ayyy");
+     //   numbers[0], numbers[1] = numbers[1], numbers[0];
+     //what the ai recommends:
+    //  const index0 = parseInt(this.value[0]);
+    //  const index1 = parseInt((this.value[1]));
+
+    //  numbers[index0], numbers[index1] = numbers[index1], numbers[index0];
+    // me trying again :
+    const index0 =  0;
+    const index1 =  1;
+
+    numbers[index0], numbers[index1] = numbers[index1], numbers[index0];
+    console.log(numbers[index0], numbers[index1]);
+    ShowSwappedNumbers();
+     
+     console.log("this swap is woorking , ayyy");
+     //yayyy figured it out.
     })
 }
 SwapValues();
