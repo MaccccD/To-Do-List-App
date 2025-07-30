@@ -71,7 +71,7 @@ function SearchNumbers(){
     searchedItem.addEventListener("change", function(){
         const searchedNumber = parseInt(this.value);
         const foundIndex = LinearSearch(numbers, searchedNumber);
-        //fixed search algorith after googling
+        //fixed search algorithm after googling:
         if(foundIndex !== -1){
            ShowSearchedNumbers([foundIndex]);
            console.log(`Found the searched number ${searchedNumber} at index ${foundIndex}`);
