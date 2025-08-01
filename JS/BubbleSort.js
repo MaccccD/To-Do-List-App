@@ -51,11 +51,26 @@ function SwapNumbers(){
     number[index6], number[index7] = number[index7], number[index6];
   }))
   console.log("numbers have swappped");
+   let typedNumber =  67;
+  DisplayedAddedSwappedNumbers(numbers, typedNumber);
+  console.log(typedNumber);
   DisplaySwappedNumbers([numbers[index0]], numbers[index1], numbers[index2], numbers[index3], numbers[index4], numbers[index5], numbers[index6], numbers[index7]);
   feedbackTxt.innerHTML = `<h1 style = "color: green">Values Swaapped!</h1>`;
   })
 }
 SwapNumbers();
+
+
+function DisplayedAddedSwappedNumbers(array, addedNumber){
+  for (let i = 0; i < array.length; i++) {
+     if(array[i].value === addedNumber){
+        return i;
+     }
+
+  }
+  return -1;
+}
+
 
 function DisplaySwappedNumbers(){
     bubbleSort.innerHTML = "";
