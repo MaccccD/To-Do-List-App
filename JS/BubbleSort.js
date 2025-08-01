@@ -3,6 +3,7 @@ const swapNumbers = document.getElementById("swapNumbers");
 const feedbackTxt = document.getElementById("feedbackTxt");
 const validateSwap = document.getElementById("validateSwap");
 const sortNumbers = document.getElementById("sortNumbers");
+const inputNumbers = document.getElementById("inputNumber");
 
 //the array of numbers :
 const numbers = [56, 34, 78, 90, 98, 67, 88, 12, 44, 100];
@@ -98,3 +99,28 @@ function SetOrder(){
   })
 }
 SetOrder();
+
+
+function AddNumbers(){
+  inputNumbers.addEventListener("change", function(){
+    // the number the user wants to add
+    let typedNumber =  parseInt(this.value);
+    //pushing that numbers into the array we already have.
+    numbers.push(typedNumber);
+    DisplayAddedNumbers(numbers);//
+    console.log("Added number to the array :", typedNumber);
+  });
+}
+AddNumbers();
+
+
+function DisplayAddedNumbers(typedNumber){
+  bubbleSort.innerHTML = ""; //clear any existing info
+  typedNumber.forEach(number =>{
+    const numText = document.createElement("span");
+    numText.innerText = number;
+    numText.classList.add("number-box");
+    bubbleSort.appendChild(numText);
+    console.log(numText);
+  });
+}
