@@ -122,6 +122,7 @@ function AddNumbers(){
     let typedNumber =  parseInt(this.value);
     //pushing that numbers into the array we already have.
     numbers.push(typedNumber);
+    console.log(typedNumber);
     DisplayAddedNumbers(numbers);//
     console.log("Added number to the array :", typedNumber);
   });
@@ -133,7 +134,7 @@ function DisplayAddedNumbers(typedNumber){
   bubbleSort.innerHTML = ""; //clear any existing info
   typedNumber.forEach(number =>{
     const numText = document.createElement("span");
-    numText.innerText = number;
+    numText.textContent = number;
     numText.classList.add("number-box");
     bubbleSort.appendChild(numText);
     console.log(numText);
