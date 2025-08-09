@@ -21,8 +21,8 @@ let index9 = 9;
 
 //display the numbers as boxes:
 function DisplayNumbers(){
-    bubbleSort.innerHTML = "";
-    numbers.forEach(number => {
+     bubbleSort.innerHTML = "";
+     numbers.forEach(number => {
      const boxes = document.createElement("div");
      boxes.classList.add("number-box");
      boxes.textContent = number;
