@@ -1,8 +1,11 @@
 //grabbng the refrences:
 const bubbleWords = document.getElementById("bubble-Words");
 const swapLetters = document.getElementById("swapLetters");
+const sortLetters = document.getElementById("sortLetters");
 //lettes array:
 let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+//unsorted letters
+let unsortedLetters =  ["b", "a", "d", "c", "f", "e", "g", "h", "j", "i"];
 //indexes for each letter:
 let index0 = 0;
 let index1 = 1;
@@ -55,6 +58,16 @@ function DisplaySwappedLetters(){
         swapLetterText.textContent = swappedLetter;
         swapLetterText.classList.add("letter-box");
         bubbleWords.appendChild(swapLetterText);
-        console.log("letts have been swapped and are showing!");
+        console.log("letters have been swapped and are showing!");
      });
 }
+
+
+function SortLetters(){
+    sortLetters.addEventListener("click", function(){
+    unsortedLetters.sort((d, e) => (e, d));
+   // DisplayLetters();
+    console.log("letters have been sorted in ascending order");
+    });  
+}
+SortLetters();
