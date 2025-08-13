@@ -2,6 +2,7 @@
 const bubbleWords = document.getElementById("bubble-Words");
 const swapLetters = document.getElementById("swapLetters");
 const sortLetters = document.getElementById("sortLetters");
+const addLetter =   document.getElementById("addLetter");
 //lettes array:
 let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
 //unsorted letters
@@ -52,8 +53,8 @@ SwapLetters();
 
 function DisplaySwappedLetters(){
     bubbleWords.innerHTML = "";
-       let swappedLetters = ["b", "a", "d", "c", "f", "e", "g", "h", "j", "i"];
-     swappedLetters.forEach(swappedLetter => {
+        let swappedLetters = ["b", "a", "d", "c", "f", "e", "g", "h", "j", "i"];
+        swappedLetters.forEach(swappedLetter => {
         const swapLetterText = document.createElement("div");
         swapLetterText.textContent = swappedLetter;
         swapLetterText.classList.add("letter-box");
@@ -66,8 +67,32 @@ function DisplaySwappedLetters(){
 function SortLetters(){
     sortLetters.addEventListener("click", function(){
     unsortedLetters.sort((d, e) => (e, d));
+   
    // DisplayLetters();
     console.log("letters have been sorted in ascending order");
     });  
 }
 SortLetters();
+
+function AddLetters(){
+    addLetter.addEventListener("change", function(){
+       // let typedletter = parseInt(this.value);// this does not work in terms of showing the actual letter bc parseInt converts a string into a number. But bc i want the string to show but it returns "NaN"
+         // addd the letter you're typing into the array;
+        let typedletter = this.value; // this was the fix. To remove the parse Int.
+        letters.push(typedletter);
+        DisplayAddedLetters(letters);
+        console.log("a typed letter ha s been added to the array");
+    });
+}
+AddLetters();
+
+function DisplayAddedLetters(typedLetter){
+    bubbleWords.innerHTML = "";
+    typedLetter.forEach(let => {
+        const letText = document.createElement("span");
+        letText.textContent = let;
+        letText.classList.add("letter-box");
+        bubbleWords.appendChild(letText);
+        console.log(letText + "i have added the letter");
+    });
+}
