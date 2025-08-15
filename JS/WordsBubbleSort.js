@@ -74,18 +74,6 @@ function SortLetters(){
 }
 SortLetters();
 
-function AddLetters(){
-    addLetter.addEventListener("change", function(){
-       // let typedletter = parseInt(this.value);// this does not work in terms of showing the actual letter bc parseInt converts a string into a number. But bc i want the string to show but it returns "NaN"
-         // addd the letter you're typing into the array;
-        let typedletter = this.value; // this was the fix. To remove the parse Int.
-        letters.push(typedletter);
-        DisplayAddedLetters(letters);
-        console.log("a typed letter has been added to the array");
-    });
-}
-AddLetters();
-
 function DisplayAddedLetters(typedLetter){
     bubbleWords.innerHTML = "";
     typedLetter.forEach(let => {
@@ -96,3 +84,24 @@ function DisplayAddedLetters(typedLetter){
         console.log(letText + "i have added the letter");
     });
 }
+
+function AddLetters(){
+    addLetter.addEventListener("change", function(){
+       // let typedletter = parseInt(this.value);// this does not work in terms of showing the actual letter bc parseInt converts a string into a number. But bc i want the string to show but it returns "NaN"
+         // addd the letter you're typing into the array;
+        let typedletter = this.value; // this was the fix. To remove the parse Int.
+        letters.push(typedletter);
+       
+         letters.forEach(let => {
+            if(typedletter === let){
+                alert("This letter already exists in here! Try another one!");
+                console.log("searching letters works");
+            }
+            else if(typedletter =! let){
+                 DisplayAddedLetters(letters);
+            }
+         });
+        console.log("a typed letter has been added to the array");
+    });
+}
+AddLetters();
