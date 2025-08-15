@@ -67,8 +67,7 @@ function DisplaySwappedLetters(){
 function SortLetters(){
     sortLetters.addEventListener("click", function(){
     unsortedLetters.sort((d, e) => (e, d));
-   
-   // DisplayLetters();
+    DisplayLetters();
     console.log("letters have been sorted in ascending order");
     });  
 }
