@@ -81,7 +81,7 @@ function AddLetters(){
         let typedletter = this.value; // this was the fix. To remove the parse Int.
         letters.push(typedletter);
         DisplayAddedLetters(letters);
-        console.log("a typed letter ha s been added to the array");
+        console.log("a typed letter has been added to the array");
     });
 }
 AddLetters();
@@ -90,7 +90,7 @@ function DisplayAddedLetters(typedLetter){
     bubbleWords.innerHTML = "";
     typedLetter.forEach(let => {
         const letText = document.createElement("span");
-        letText.textContent = let;
+        letText.innerText = let;
         letText.classList.add("letter-box");
         bubbleWords.appendChild(letText);
         console.log(letText + "i have added the letter");
