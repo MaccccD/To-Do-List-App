@@ -89,7 +89,15 @@ function AddLetters(){
        // let typedletter = parseInt(this.value);// this does not work in terms of showing the actual letter bc parseInt converts a string into a number. But bc i want the string to show but it returns "NaN"
          // addd the letter you're typing into the array;
         let typedletter = this.value; // this was the fix. To remove the parse Int.
-        letters.push(typedletter);
+       //this one works.  Just had to use "Includes"
+        if(letters.includes(typedletter)){
+            alert("This letter already exists in here! Try another one!");
+            console.log("searching letters works");
+        }
+        else{
+            letters.push(typedletter);
+            DisplayAddedLetters(letters);
+        }
        
         //  letters.forEach(let => {
         //     if(typedletter === let){
@@ -102,17 +110,18 @@ function AddLetters(){
         //  });
         // console.log("a typed letter has been added to the array");
         // replacing the "for each" with a "for loop" to map the array to the index and then searcgh for the exisiting in each index within the array of letters
-        for (let i = 0; i < letters.length; i++) {
-            const element = letters[i];
-            if(typedletter === element){
-            alert("This letter already exists in here! Try another one!");
-            console.log("searching letters works");
-            }
-            else{
-                DisplayAddedLetters(letters);
-            }
+    //     for (let i = 0; i < letters.length; i++) {
             
-        }
-    });
+    //         if(letters.includes(typedletter)){
+    //         alert("This letter already exists in here! Try another one!");
+    //         console.log("searching letters works");
+    //         }
+    //         else if (element.includes(!typedletter)){
+    //             DisplayAddedLetters(letters);
+    //             console.log("the letter has been added bc it did not exist in the array");
+    //         }
+            
+    //     }// did not work. After asking deep seek, i need to use "Includes"
+    }); 
 }
 AddLetters();

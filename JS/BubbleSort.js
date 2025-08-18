@@ -120,10 +120,15 @@ function AddNumbers(){
   inputNumbers.addEventListener("change", function(){
     // the number the user wants to add
     let typedNumber =  parseInt(this.value);
-    //pushing that numbers into the array we already have.
-    numbers.push(typedNumber);
-    console.log(typedNumber);
-    DisplayAddedNumbers(numbers);//
+    //chec if the number the user is addng already exists in the array of numbers
+    if(numbers.includes(typedNumber)){
+      alert("That number already exists. Try a new one");
+      console.log("the numbr is not dislayed")
+    }
+    else{
+       numbers.push(typedNumber);
+       DisplayAddedNumbers(numbers);//
+    }
     console.log("Added number to the array :", typedNumber);
   });
 }
