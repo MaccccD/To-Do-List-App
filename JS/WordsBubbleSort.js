@@ -91,16 +91,28 @@ function AddLetters(){
         let typedletter = this.value; // this was the fix. To remove the parse Int.
         letters.push(typedletter);
        
-         letters.forEach(let => {
-            if(typedletter === let){
-                alert("This letter already exists in here! Try another one!");
-                console.log("searching letters works");
+        //  letters.forEach(let => {
+        //     if(typedletter === let){
+        //         alert("This letter already exists in here! Try another one!");
+        //         console.log("searching letters works");
+        //     }
+        //     else if(typedletter =! let){
+        //          DisplayAddedLetters(letters);
+        //     }
+        //  });
+        // console.log("a typed letter has been added to the array");
+        // replacing the "for each" with a "for loop" to map the array to the index and then searcgh for the exisiting in each index within the array of letters
+        for (let i = 0; i < letters.length; i++) {
+            const element = letters[i];
+            if(typedletter === element){
+            alert("This letter already exists in here! Try another one!");
+            console.log("searching letters works");
             }
-            else if(typedletter =! let){
-                 DisplayAddedLetters(letters);
+            else{
+                DisplayAddedLetters(letters);
             }
-         });
-        console.log("a typed letter has been added to the array");
+            
+        }
     });
 }
 AddLetters();
