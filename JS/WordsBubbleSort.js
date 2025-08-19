@@ -97,6 +97,7 @@ function AddLetters(){
         else{
             letters.push(typedletter);
             DisplayAddedLetters(letters);
+            console.log(letters + "has been pushed");
         }
        
         //  letters.forEach(let => {
