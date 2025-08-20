@@ -92,10 +92,12 @@ function AddLetters(){
        //this one works.  Just had to use "Includes"
         if(letters.includes(typedletter)){
             alert("This letter already exists in here! Try another one!");
+            typedletter = "";
             console.log("searching letters works");
         }
         else{
             letters.push(typedletter);
+            alert("Letter had been added");
             DisplayAddedLetters(letters);
             console.log(letters + "has been pushed");
         }
