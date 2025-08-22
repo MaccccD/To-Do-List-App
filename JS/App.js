@@ -106,7 +106,7 @@ function DisplayShuffledTasks(){
     taskItem.innerHTML = "";
     let shuffledTasks = tasksAdded;
     if(shuffledTasks.length === 0){
-        alert("No tasks have been added yet and sho there is nothing to reshuffle");
+        alert("No tasks have been added yet and so there is nothing to reshuffle");
         return;
     }
     shuffledTasks.forEach(task => {
