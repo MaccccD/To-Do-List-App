@@ -100,6 +100,7 @@ function Reshuffle(){
         console.log("yayy tasks have been reshuffled!");
     })
 };
+Reshuffle();
 
 function DisplayShuffledTasks(){
     taskItem.innerHTML = "";
