@@ -95,19 +95,26 @@ function Reshuffle(){
         tasksAdded.map((task)=>{
           task[0], task[1] = task[1], task[0]
           task[1], task[0] = task[2], task[1]
-        })
+        });
+        DisplayShuffledTasks(tasksAdded[0], tasksAdded[1], tasksAdded[2]);
+        console.log("yayy tasks have been reshuffled!");
     })
 };
 
 function DisplayShuffledTasks(){
     taskItem.innerHTML = "";
     let shuffledTasks = tasksAdded;
+    if(shuffledTasks.length === 0){
+        alert("No tasks have been added yet and sho there is nothing to reshuffle");
+        return;
+    }
     shuffledTasks.forEach(task => {
         let shuffledText = document.createElement("span");
         shuffledText.textContent = task;
         shuffledText.style.accentColor ="orange";
         taskItem.appendChild(shuffledText);
         console.log(shuffledText);
+        console.log("yay, shuffled tasks display lgicmis working");
     });
 
 }
