@@ -10,6 +10,7 @@ const filterItems = document.querySelector("select");
 const allTasks = document.getElementById("allTasks");
 const completedTasks = document.getElementById("completed");
 const incompleteTasks = document.getElementById("incomplete");
+const reshuffleTasksOrder = document.getElementById("reshuffleTaskOrder");
 
 
 
@@ -87,6 +88,28 @@ function DeleteTasks(){
     taskItem.textContent = ""; // removes evrythinggg
     console.log("delete works!");
    })
+}
+
+function Reshuffle(){
+    reshuffleTasksOrder.addEventListener("click", function(){
+        tasksAdded.map((task)=>{
+          task[0], task[1] = task[1], task[0]
+          task[1], task[0] = task[2], task[1]
+        })
+    })
+};
+
+function DisplayShuffledTasks(){
+    taskItem.innerHTML = "";
+    let shuffledTasks = tasksAdded;
+    shuffledTasks.forEach(task => {
+        let shuffledText = document.createElement("span");
+        shuffledText.textContent = task;
+        shuffledText.style.accentColor ="orange";
+        taskItem.appendChild(shuffledText);
+        console.log(shuffledText);
+    });
+
 }
 
 
