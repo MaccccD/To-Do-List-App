@@ -54,6 +54,10 @@ function Search(){
 searchCity.addEventListener("change",function(){
 const searchedItem = this.value;
 let filteredItems = [];
+if(searchedItem != filteredItems){
+  alert("No results for what you searched for. Please try search what aleready exists.");
+  return;
+}
 switch(searchedItem){
    case "Location":
     filteredItems = weatherData.map(data=> data.Location);
