@@ -44,7 +44,7 @@ function DisplayTaskItem(){
     //show the task that has been added as an html list item:
     taskItem.innerHTML = ''; //clear existing
     tasksAdded.forEach((task, index)=>{ // here i'm basically creating a list item as an element so that each task added is its own list item and has a unique index
-        const li = document.createElement('li'); 
+        const li = document.createElement('span'); 
         li.innerText = task; // can also use Text Content as well
         li.setAttribute('data-index', index);
 
@@ -115,7 +115,7 @@ function DisplayShuffledTasks(){
         shuffledText.style.accentColor ="orange";
         taskItem.appendChild(shuffledText);
         console.log(shuffledText);
-        console.log("yay, shuffled tasks display lgicmis working");
+        console.log("yay, shuffled tasks display logic is working");
     });
 
 }
