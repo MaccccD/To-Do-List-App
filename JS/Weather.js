@@ -55,7 +55,7 @@ searchCity.addEventListener("change",function(){
 const searchedItem = this.value;
 let filteredItems = [];
 if(searchedItem != filteredItems){
-  alert("No results for what you searched for. Please try search what aleready exists.");
+  alert("No results for what you searched for. Please try search what already exists.");
   return;
 }
 switch(searchedItem){

@@ -74,6 +74,7 @@ function SearchNumbers(){
         //fixed search algorithm after googling:
         if(foundIndex !== -1){
            ShowSearchedNumbers([foundIndex]);
+           alert("The searched number has been found !");
            console.log(`Found the searched number ${searchedNumber} at index ${foundIndex}`);
         }
         else{
