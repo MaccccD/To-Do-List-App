@@ -29,7 +29,7 @@ function AddingTasks(){
     const currentValue = enterTask.value.trim();
     if(currentValue){ // only add the task if the field  is not empty
         tasksAdded.push({ //here i'm adding each task as an object so that it would be easier to track it completion status and to do the filtering fucntionality.
-            id: 0, // returns it as an object instead of strings
+            id: Date.now(), // returns it as an object instead of strings
             text: currentValue,
             completed: false
         });
@@ -77,7 +77,7 @@ function DisplayTaskItem(){
 }
 
 function ToggleTask(index){ //here i'm checking if the task is completed by tracking its completion status vs its incomplete status
-    tasksAdded[index].completed = !tasksAdded[index].completed;
+    tasksAdded[index].completed = !tasksAdded[index].completed;// in react: if(task.id === taskId) return {...task, completed: !task,completed}
     DisplayTaskItem();
     StorageUpdate();
 }
