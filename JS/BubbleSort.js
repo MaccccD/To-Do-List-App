@@ -127,7 +127,8 @@ function AddNumbers(){
     }
     else{
        numbers.push(typedNumber);
-       DisplayAddedNumbers(numbers);//
+       DisplayAddedNumbers(numbers);
+       alert("number has been added successfully!");
     }
     console.log("Added number to the array :", typedNumber);
   });
