@@ -123,12 +123,15 @@ function AddNumbers(){
     //chec if the number the user is addng already exists in the array of numbers
     if(numbers.includes(typedNumber)){
       alert("That number already exists. Try a new one");
+      typedNumber.value = "";
       console.log("the numbr is not dislayed")
     }
     else{
        numbers.push(typedNumber);
        DisplayAddedNumbers(numbers);
-       alert("number has been added successfully!");
+       bubbleSort.value = "";
+       alert("Number has been added successfully!");
+       return;
     }
     console.log("Added number to the array :", typedNumber);
   });
