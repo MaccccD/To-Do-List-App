@@ -109,6 +109,7 @@ SortNumbers();
 function SetOrder(){
   sortNumbers.addEventListener("click", function(){
     numbers.sort((x, y)=> y - x);
+    alert("Numbers have been sorted in ascending order");
     console.log("Workinggg");
     DisplayNumbers();
   })
