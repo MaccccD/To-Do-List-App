@@ -1,0 +1,1 @@
+const binaryNumbers = document.getElementById("binaryNumbers");
