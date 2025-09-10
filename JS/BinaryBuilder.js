@@ -26,7 +26,7 @@ function ShowBinaryNumbers(){
      binaryWords.forEach(binary => {
         let binaryNum = document.createElement("div");
         binaryNum.textContent = binary.binary;
-        binaryNum.style.accentColor = "green";
+        binaryNum.style.color = "green";
         binaryNum.classList.add("binary-box")
         binaryNumbers.appendChild(binaryNum);
         console.log(binaryNum);
@@ -41,8 +41,7 @@ function ShowBinaryLetter(){
         binaryWords.forEach(binaryW => {
              let binaryLet = document.createElement("div");
              binaryLet.textContent = binaryW.letter;
-             binaryLet.style.accentColor = "orange";
-           //  binaryLet.classList.add("binary-box");
+             binaryLet.style.color = "orange";
              binaryNumbers.appendChild(binaryLet);
              console.log(binaryLet);
         });
