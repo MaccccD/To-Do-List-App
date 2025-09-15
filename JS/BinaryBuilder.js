@@ -16,8 +16,6 @@ let binaryWords = [
      {letter: "E",
       binary: "01000101"
      },
-     {
-     }
     ];
 
 function ShowBinaryNumbers(){
@@ -26,7 +24,7 @@ function ShowBinaryNumbers(){
      binaryWords.forEach(binary => {
         let binaryNum = document.createElement("div");
         binaryNum.textContent = binary.binary;
-        binaryNum.style.color = "green";
+        binaryNum.style.color = "limegreen";
         binaryNum.style.fontStyle = 'italic'
         binaryNum.classList.add("binary-box")
         binaryNumbers.appendChild(binaryNum);
@@ -43,6 +41,7 @@ function ShowBinaryLetter(){
              let binaryLet = document.createElement("div");
              binaryLet.textContent = binaryW.letter;
              binaryLet.style.color = "orange";
+             binaryLet.classList.add("binary-box-letter");
              binaryNumbers.appendChild(binaryLet);
              
              console.log(binaryLet);
