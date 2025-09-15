@@ -27,6 +27,7 @@ function ShowBinaryNumbers(){
         let binaryNum = document.createElement("div");
         binaryNum.textContent = binary.binary;
         binaryNum.style.color = "green";
+        binaryNum.style.fontStyle = 'italic'
         binaryNum.classList.add("binary-box")
         binaryNumbers.appendChild(binaryNum);
         console.log(binaryNum);
@@ -43,6 +44,7 @@ function ShowBinaryLetter(){
              binaryLet.textContent = binaryW.letter;
              binaryLet.style.color = "orange";
              binaryNumbers.appendChild(binaryLet);
+             
              console.log(binaryLet);
         });
     
