@@ -1,5 +1,6 @@
 const binaryNumbers = document.getElementById("binaryNumbers");
 const binaryLetters = document.getElementById("binaryLetters");
+const binaryCodeEntry  = document.getElementById("addBinaryCode");
 
 let binaryWords = [
      {letter: "A",
