@@ -50,3 +50,21 @@ function ShowBinaryLetter(){
     
     }
    ShowBinaryLetter();
+
+   function AddBinaryCode(){
+    binaryCodeEntry.addEventListener("input", function(){
+      const typedCode = this.value;
+       //check if the typed binary code exists in the array:
+       if(typedCode === binaryWords.binary){
+        alert("The binary code type does exists in the array, keep typing...");
+       }
+
+    })
+    }
+   AddBinaryCode();
+
+//    function CheckBinaryCodes(){
+    
+//    }
+
+  
