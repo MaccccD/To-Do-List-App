@@ -43,7 +43,7 @@ function ShowBinaryLetter(){
              binaryLet.textContent = binaryW.letter;
              binaryLet.style.color = "orange";
              binaryLet.classList.add("binary-box-letter");
-             binaryNumbers.appendChild(binaryLet);
+             binaryLetters.appendChild(binaryLet);
              
              console.log(binaryLet);
         });
@@ -52,29 +52,39 @@ function ShowBinaryLetter(){
    ShowBinaryLetter();
 
    function AddBinaryCode(){
-    binaryCodeEntry.addEventListener("change", function(){
-      const typedCode = parseInt(this.value);
-      const foundCode = CheckBinaryCodes(binaryWords, typedCode);
+    binaryCodeEntry.addEventListener("input", function(){
+      const typedCode = this.value.trim(); // using parse into will convert the number to a decimal andyou wanna kep it as a string. so take out out the parse Int.
        //check if the typed binary code exists in the array:
-       if(foundCode !== -1){
-        alert("The binary code type does exists in the array, keep typing...");
-        console.log("workingg")
+       if(typedCode.length > 0){
+        const foundCode = CheckBinaryCodes(binaryWords, typedCode);
+          if(foundCode !== -1){
+            alert("The binary code type does exists in the array, keep typing...");
+            console.log("workingg")
        }
+       else{
+        alert("Binary Code not found !!!!!");
+        console.log("No match", foundCode);
+       }
+     
+       }
+
+     
 
     })
     }
    AddBinaryCode();
 
+   
+
    function CheckBinaryCodes(arr, target){
     for (let i = 0; i < arr.length; i++) {
        // this checks in the array if the bnary code tyoed in matches what already exists in the binary Words arr:
-        if(arr[i].value === target){
+        if(arr[i].binary === target){ // fixed "value" to be "bainry" bv the actual code is called"binary"
             return i;
-        }
-
-        return -1;
-        
+        }        
     }
+        return -1; // the returned index if the value of the array matched the target
+
    }
 
   
