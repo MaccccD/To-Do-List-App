@@ -52,19 +52,29 @@ function ShowBinaryLetter(){
    ShowBinaryLetter();
 
    function AddBinaryCode(){
-    binaryCodeEntry.addEventListener("input", function(){
-      const typedCode = this.value;
+    binaryCodeEntry.addEventListener("change", function(){
+      const typedCode = parseInt(this.value);
+      const foundCode = CheckBinaryCodes(binaryWords, typedCode);
        //check if the typed binary code exists in the array:
-       if(typedCode === binaryWords.binary){
+       if(foundCode !== -1){
         alert("The binary code type does exists in the array, keep typing...");
+        console.log("workingg")
        }
 
     })
     }
    AddBinaryCode();
 
-//    function CheckBinaryCodes(){
-    
-//    }
+   function CheckBinaryCodes(arr, target){
+    for (let i = 0; i < arr.length; i++) {
+       // this checks in the array if the bnary code tyoed in matches what already exists in the binary Words arr:
+        if(arr[i].value === target){
+            return i;
+        }
+
+        return -1;
+        
+    }
+   }
 
   
