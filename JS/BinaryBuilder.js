@@ -1,6 +1,7 @@
 const binaryNumbers = document.getElementById("binaryNumbers");
 const binaryLetters = document.getElementById("binaryLetters");
 const binaryCodeEntry  = document.getElementById("addBinaryCode");
+const createdWord = document.getElementById("createdWord");
 
 let binaryWords = [
      {letter: "A",
@@ -17,6 +18,25 @@ let binaryWords = [
      {letter: "E",
       binary: "01000101"
      },
+     {
+      letter: "D",
+      binary: "01000100"
+     },
+     {
+       letter: "a",
+       binary: "01100001"
+     },
+     {
+        letter: "u",
+        binary: "01110101"
+     }, {
+        letter: "m",
+        binary: "01101101"
+     }, 
+     {
+        letter: "i",
+        binary: "01101001"
+     }
     ];
 
 function ShowBinaryNumbers(){
@@ -34,6 +54,19 @@ function ShowBinaryNumbers(){
     });
 }
 ShowBinaryNumbers();
+
+  function ShowWordFormed(){
+    createdWord.innerHTML = "";
+
+    binaryWords.forEach(binLetter => {
+         let foundLetter = document.createElement("div");
+         foundLetter.innerText = binLetter.letter;
+         foundLetter.style.color = "Orange";
+         foundLetter.classList.add("binary-box-letter");
+         createdWord.appendChild(foundLetter);
+         console.log(foundLetter);
+    });
+  }
 
 function ShowBinaryLetter(){
         binaryLetters.innerHTML = "";
@@ -53,14 +86,15 @@ function ShowBinaryLetter(){
 
    function AddBinaryCode(){
     binaryCodeEntry.addEventListener("input", function(){
-      const typedCode = this.value.trim(); // using parse into will convert the number to a decimal andyou wanna kep it as a string. so take out out the parse Int.
+      const typedCode = this.value.trim(); // using parse into will convert the number to a decimal and you wanna kep it as a string. so take out out the parse Int.
        //check if the typed binary code exists in the array:
        if(typedCode.length > 0){
         const foundCode = CheckBinaryCodes(binaryWords, typedCode);
           if(foundCode !== -1){
             alert("The binary code type does exists in the array, keep typing...");
-            
-            console.log("workingg")
+            ShowWordFormed();
+            return;
+         
          }
         else{
            //alert("Binary Code not found !!!!!");
@@ -77,12 +111,13 @@ function ShowBinaryLetter(){
    function CheckBinaryCodes(arr, target){
     for (let i = 0; i < arr.length; i++) {
        // this checks in the array if the bnary code tyoed in matches what already exists in the binary Words arr:
-        if(arr[i].binary === target){ // fixed "value" to be "bainry" bv the actual code is called"binary"
+        if(arr[i].binary & arry[i].letter === target){ // fixed "value" to be "bainry" bv the actual code is called"binary"
             return i;
         }        
     }
         return -1; // the returned index if the value of the array matched the target
 
    }
+
 
   
