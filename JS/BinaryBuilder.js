@@ -111,7 +111,7 @@ function ShowBinaryLetter(){
    function CheckBinaryCodes(arr, target){
     for (let i = 0; i < arr.length; i++) {
        // this checks in the array if the bnary code tyoed in matches what already exists in the binary Words arr:
-        if(arr[i].binary & arry[i].letter === target){ // fixed "value" to be "bainry" bv the actual code is called"binary"
+        if(arr[i].binary === target){ // fixed "value" to be "bainry" bv the actual code is called"binary"
             return i;
         }        
     }
