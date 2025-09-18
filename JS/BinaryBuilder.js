@@ -59,11 +59,12 @@ function ShowBinaryLetter(){
         const foundCode = CheckBinaryCodes(binaryWords, typedCode);
           if(foundCode !== -1){
             alert("The binary code type does exists in the array, keep typing...");
+            
             console.log("workingg")
          }
         else{
            //alert("Binary Code not found !!!!!");
-           console.log("No match", foundCode);
+           console.log("No match has been found", foundCode);
          }
      
         }
