@@ -19,8 +19,8 @@ let binaryWords = [
       binary: "01000101"
      },
      {
-      letter: "D",
-      binary: "01000100"
+       letter: "D",
+       binary: "01000100"
      },
      {
        letter: "a",
@@ -55,17 +55,25 @@ function ShowBinaryNumbers(){
 }
 ShowBinaryNumbers();
 
-  function ShowWordFormed(){
+  function ShowWordFormed(typedCode){
     createdWord.innerHTML = "";
-
-    binaryWords.forEach(binLetter => {
-         let foundLetter = document.createElement("div");
-         foundLetter.innerText = binLetter.letter;
-         foundLetter.style.color = "Orange";
-         foundLetter.classList.add("binary-box-letter");
-         createdWord.appendChild(foundLetter);
-         console.log(foundLetter);
+    typedCode = ""
+    typedCode.forEach(code=> {
+      let matchingCode = document.createElement("div");
+      matchingCode.innerText = code;
+      matchingCode.style.color = "Yellow";
+      createdWord.appendChild(matchingCode);
+      console.log(matchingCode);
     });
+
+    // binaryWords.forEach(binLetter => {
+    //      let foundLetter = document.createElement("div");
+    //      foundLetter.innerText = binLetter.letter;
+    //      foundLetter.style.color = "Orange";
+    //      foundLetter.classList.add("binary-box-letter");
+    //      createdWord.appendChild(foundLetter);
+    //      console.log(foundLetter);
+    // });
   }
 
 function ShowBinaryLetter(){
@@ -118,6 +126,8 @@ function ShowBinaryLetter(){
         return -1; // the returned index if the value of the array matched the target
 
    }
+
+   
 
 
   
