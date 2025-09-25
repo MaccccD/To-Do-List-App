@@ -85,7 +85,6 @@ function ShowBinaryLetter(){
              binaryLet.style.color = "orange";
              binaryLet.classList.add("binary-box-letter");
              binaryLetters.appendChild(binaryLet);
-             
              console.log(binaryLet);
         });
     
