@@ -19,12 +19,12 @@ let binaryWords = [
       binary: "01000101"
      },
      {
-       letter: "D",
-       binary: "01000100"
+        letter: "D",
+        binary: "01000100"
      },
      {
-       letter: "a",
-       binary: "01100001"
+        letter: "a",
+        binary: "01100001"
      },
      {
         letter: "u",
@@ -41,6 +41,10 @@ let binaryWords = [
 
 function ShowBinaryNumbers(){
      binaryNumbers.innerHTML = "";
+
+     binaryNumbers.style.display = "flex";
+     binaryNumbers.style.gap = "20px";
+     binaryNumbers.style.flexWrap = "wrap";
 
      binaryWords.forEach(binary => {
         let binaryNum = document.createElement("div");
@@ -79,6 +83,10 @@ ShowBinaryNumbers();
 function ShowBinaryLetter(){
         binaryLetters.innerHTML = "";
 
+        binaryLetters.style.display = "flex";// make the container the flex layout. not the actual item.
+        binaryLetters.style.gap = "20px";
+        binaryLetters.style.flexWrap = "wrap";
+
         binaryWords.forEach(binaryW => {
              let binaryLet = document.createElement("div");
              binaryLet.textContent = binaryW.letter;
@@ -93,7 +101,7 @@ function ShowBinaryLetter(){
 
    function AddBinaryCode(){
     binaryCodeEntry.addEventListener("input", function(){
-      const typedCode = this.value.trim(); // using parse into will convert the number to a decimal and you wanna kep it as a string. so take out out the parse Int.
+      const typedCode = this.value.trim(); // using parse into will convert the number to a decimal and you wanna keep it as a string. so take out out the parse Int.
        //check if the typed binary code exists in the array:
        if(typedCode.length > 0){
         const foundCode = CheckBinaryCodes(binaryWords, typedCode);
