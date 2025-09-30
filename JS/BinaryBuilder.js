@@ -61,7 +61,6 @@ ShowBinaryNumbers();
 
   function ShowWordFormed(typedCode){
     createdWord.innerHTML = "";
-  
     typedCode.forEach(code=> {
       let matchingCode = document.createElement("div");
       matchingCode.innerText = code;
@@ -103,11 +102,12 @@ function ShowBinaryLetter(){
     binaryCodeEntry.addEventListener("input", function(){
       const typedCode = this.value.trim(); // using parse into will convert the number to a decimal and you wanna keep it as a string. so take out out the parse Int.
        //check if the typed binary code exists in the array:
+       typedCode = "01000100 + 01110101 + 01101101 + 01101001"
        if(typedCode.length > 0){
         const foundCode = CheckBinaryCodes(binaryWords, typedCode);
           if(foundCode !== -1){
             alert("The binary code type does exists in the array, keep typing...");
-            ShowWordFormed();
+            ShowWordFormed(typedCode);
             return;
          
          }
