@@ -61,7 +61,7 @@ ShowBinaryNumbers();
 
   function ShowWordFormed(typedCode){
     createdWord.innerHTML = "";
-    typedCode = ""
+  
     typedCode.forEach(code=> {
       let matchingCode = document.createElement("div");
       matchingCode.innerText = code;
