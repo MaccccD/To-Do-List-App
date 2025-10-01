@@ -115,7 +115,8 @@ function ShowBinaryLetter(){
             if(trimmedCode.length === 0){
               const foundLetter = FindLetterByBinary(trimmedCode); // mapping the binary code with the letter:
               if(foundLetter){
-                matchedLetters.push(foundLetter); // if the binary code typed matches the one associated with the a certain letter, add the latter to the matching letters array via push.
+                matchedLetters.push(foundLetter); // if the binary code typed matches the one associated with the a certain letter, add the latter to the matching letters array via the push method.
+                console.log(foundLetter);
                 allFound = true;
               }
               else{
@@ -132,11 +133,11 @@ function ShowBinaryLetter(){
             createdWord.innerHTML = "";
          }
           
-         //re turning the full message of the created word:
-         if(allFound && codesArray.every(code => code.trim().length === 8)){
-            console.log("all codes entered are valid!!", matchedLetters.join("")); // jpining all matched lettr to form one word
-            alert("All Typed In codes are valid and here is the word :)");
-         }
+         //returning the full message of the created word:
+         // if(allFound && codesArray.every(code => code.trim().length === 8)){
+         //    console.log("all codes entered are valid!!", matchedLetters.join("")); // jpining all matched lettr to form one word
+         //    alert("All Typed In codes are valid and here is the word :)");
+         // }
 
          // my own code before soliciting help:
       //  const foundCode = CheckBinaryCodes(binaryWords, typedCode);
