@@ -97,7 +97,7 @@ function ShowBinaryLetter(){
    ShowBinaryLetter();
 
    function AddBinaryCode(){
-    binaryCodeEntry.addEventListener("input", function(){
+    binaryCodeEntry.addEventListener("change", function(){
       const typedCode = this.value.trim(); // using parse into will convert the number to a decimal and you wanna keep it as a string. so take out out the parse Int.
        //check if the typed binary code exists in the array:
       //  typedCode = "01000100" + "01110101" + "01101101" + "01101001"; // this needed to be separated instead of one string by using "Split"
@@ -117,6 +117,7 @@ function ShowBinaryLetter(){
               if(foundLetter){
                 matchedLetters.push(foundLetter); // if the binary code typed matches the one associated with the a certain letter, add the latter to the matching letters array via the push method.
                 console.log(foundLetter);
+                alert("letter has been found !");
                 allFound = true;
               }
               else{
