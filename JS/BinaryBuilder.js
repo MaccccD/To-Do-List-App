@@ -63,7 +63,9 @@ ShowBinaryNumbers();
     typedCode.forEach(code=> {
       let matchingCode = document.createElement("div");
       matchingCode.innerText = code;
-      matchingCode.style.color = "Yellow";
+      matchingCode.style.display = "flex";
+      matchingCode.style.color = "Green";
+      matchingCode.style.fontWeight = "bold";
       createdWord.appendChild(matchingCode);
       console.log(matchingCode);
     });
@@ -97,9 +99,16 @@ function ShowBinaryLetter(){
    ShowBinaryLetter();
 
    function AddBinaryCode(){
-    binaryCodeEntry.addEventListener("change", function(){
+    binaryCodeEntry.addEventListener("input", function(event){
+      if(event.type === "keydown" && event.type !== "Enter"){ // this is to ensure that the input fiel pickes up the code being punched in
+         console.log("it works!");
+         return;
+      }
+
+      
       const typedCode = this.value.trim(); // using parse into will convert the number to a decimal and you wanna keep it as a string. so take out out the parse Int.
        //check if the typed binary code exists in the array:
+     
       //  typedCode = "01000100" + "01110101" + "01101101" + "01101001"; // this needed to be separated instead of one string by using "Split"
        if(typedCode.length > 0){
          //After seeking help: The codes need to be split by a + sign:
@@ -111,13 +120,13 @@ function ShowBinaryLetter(){
          codesArray.forEach(code => {
             const trimmedCode = code.trim();
 
-            //the complete binary code:
-            if(trimmedCode.length === 0){
+            //the complete binary code:// changed the lnegth to be 8 instead of zero bc there are 8 binary codes in one letter. 
+            if(trimmedCode.length === 8){
               const foundLetter = FindLetterByBinary(trimmedCode); // mapping the binary code with the letter:
               if(foundLetter){
                 matchedLetters.push(foundLetter); // if the binary code typed matches the one associated with the a certain letter, add the latter to the matching letters array via the push method.
                 console.log(foundLetter);
-                alert("letter has been found !");
+               // alert("letter has been found !");
                 allFound = true;
               }
               else{
@@ -132,6 +141,7 @@ function ShowBinaryLetter(){
          }
          else{
             createdWord.innerHTML = "";
+            console.log("no valid word formed!");
          }
           
          //returning the full message of the created word:
@@ -153,6 +163,14 @@ function ShowBinaryLetter(){
       //    }
      
         }
+    });
+
+    binaryCodeEntry.addEventListener("keydown", function(event){
+      if(event.key === "Enter"){
+         console.log("the enter key is working");
+         return;
+         
+      }
     })
     }
    AddBinaryCode();
